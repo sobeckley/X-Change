@@ -29,4 +29,11 @@
         android:layout_gravity="right"
         android:text="@string/button_predict"
         android:onClick="openPrediction"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/button_exchange"
+        android:onClick="openExchange"/>
 </LinearLayout>

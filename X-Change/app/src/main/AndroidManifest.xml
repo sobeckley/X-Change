@@ -16,6 +16,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PredictionView"
+            android:label="@string/title_activity_prediction_view" >
+        </activity>
+        <activity
+            android:name=".StatisticsView"
+            android:label="@string/title_activity_statistics_view"
+            android:parentActivityName=".PredictionView" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.app.xchange.x_change.PredictionView" />
+        </activity>
+        <activity
+            android:name=".ExchangeView"
+            android:label="@string/title_activity_exchange_view"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.app.xchange.x_change.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

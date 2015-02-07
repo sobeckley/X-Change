@@ -1,43 +1,24 @@
 package com.app.xchange.x_change;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
 
 
-public class MainActivity extends ActionBarActivity {
-
-    public final static String CURRENCY = "com.app.xchange.x_change.MESSAGE";
+public class ExchangeView extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_exchange_view);
     }
 
-    /** Called when the user clicks the Prediction button */
-    public void openPrediction(View view) {
-        Intent intent = new Intent(this, PredictionView.class);
-        EditText editText = (EditText) findViewById(R.id.currency);
-        String message = editText.getText().toString();
-        intent.putExtra(CURRENCY, message);
-        startActivity(intent);
-    }
-
-    /** Called when the user clicks the Exchange button */
-    public void openExchange(View view) {
-        Intent intent = new Intent(this, ExchangeView.class);
-        startActivity(intent);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_exchange_view, menu);
         return true;
     }
 
