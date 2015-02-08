@@ -28,7 +28,8 @@
                 android:id="@+id/productID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:gravity="right"
                 android:textStyle="bold"
                 android:text="@string/exchangeRate"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -52,7 +53,7 @@
                 android:id="@+id/EURRATE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="right"
                 android:text="@string/EURRATE"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -76,7 +77,7 @@
                 android:id="@+id/JPYRATE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="right"
                 android:text="@string/JPYRATE"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -100,7 +101,7 @@
                 android:id="@+id/GBPRATE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="right"
                 android:text="@string/GBPRATE"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -124,7 +125,7 @@
                 android:id="@+id/CHFRATE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="right"
                 android:text="@string/CHFRATE"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -148,7 +149,7 @@
                 android:id="@+id/CADRATE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="right"
                 android:text="@string/CADRATE"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -172,7 +173,7 @@
                 android:id="@+id/INRRATE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="right"
                 android:text="@string/INRRATE"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 

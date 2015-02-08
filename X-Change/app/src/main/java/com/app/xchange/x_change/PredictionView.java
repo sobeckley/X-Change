@@ -28,36 +28,38 @@ public class PredictionView extends ActionBarActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        double[] prevData = new double[10];
-        for (int i = 0; i < prevData.length; i++) {
-            prevData[i] = i;
+        double[] doubleData = {1.515, 1.511, 1.513, 1.5135, 1.5159, 1.52, 1.523, 1.526, 1.525,
+            1.523, 1.5218, 1.52125, 1.512, 1.510, 1.513};
+        float[] floatData = new float[15];
+
+        for(int i = 0; i < 15; i++) {
+            floatData[i] = (float) doubleData[i];
         }
 
-        double[] newDataDouble = null;
-        float[] newData = null;
+        /* Next Level Shit Right There */
+//
+//        if (prevData == null) {
+//            System.out.println("WE GOTS NO DATA CAP'N");
+//            throw new NullPointerException();
+//        } else {
+//            //newDataDouble = PredictionMath.predict(prevData);
+//            newDataDouble = new double[10];
+//
+//            newData = new float[newDataDouble.length];
+//            for(int j = 0; j < newDataDouble.length;j++) {
+//                newData[j] = (float) newDataDouble[j];
+//            }
+//        }
 
-        if (prevData == null) {
-            System.out.println("WE GOTS NO DATA CAP'N");
-            throw new NullPointerException();
-        } else {
-            //newDataDouble = PredictionMath.predict(prevData);
-            newDataDouble = new double[10];
+//        float[] totalData = new float[prevData.length + newData.length];
 
-            newData = new float[newDataDouble.length];
-            for(int j = 0; j < newDataDouble.length;j++) {
-                newData[j] = (float) newDataDouble[j];
-            }
-        }
-
-        float[] totalData = new float[prevData.length + newData.length];
-
-        for(int q = 0; q < prevData.length; q++) {
-            totalData[q] = (float) prevData[q];
-        }
-
-        for(int l = 0; l < newData.length; l++) {
-            totalData[prevData.length + l] = newData[l];
-        }
+//        for(int q = 0; q < prevData.length; q++) {
+//            totalData[q] = (float) prevData[q];
+//        }
+//
+//        for(int l = 0; l < newData.length; l++) {
+//            totalData[prevData.length + l] = newData[l];
+//        }
 
         super.onCreate(savedInstanceState);
 
@@ -67,24 +69,16 @@ public class PredictionView extends ActionBarActivity {
         LinearLayout buttons = new LinearLayout(this);
         buttons.setOrientation(LinearLayout.VERTICAL);
         TextView CurrentValue = new TextView(this);
-        CurrentValue.setText("Current Value: 27.98");
-        TextView FiftyDayHigh = new TextView(this);
-        FiftyDayHigh.setText("Fifty Day High: 28.31");
+        CurrentValue.setText("Current Value: 1.515");
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT); // Verbose!
 
         buttons.addView(CurrentValue, lp);
-        buttons.addView(FiftyDayHigh, lp);
         buttonGraph.addView(buttons, lp);
 
-        float[] days = new float[totalData.length];
-        for(int k = 0; k < totalData.length; k++) {
-            days[k] = Float.parseFloat(Integer.toString(k));
-        }
+        float[] xvalues = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+        float[] yvalues = floatData;
 
-        float[] xvalues = days;
-        float[] yvalues = totalData;
-
-        int color = prevData.length;
+        int color = 0;
 
         plot2d graph = new plot2d(this, xvalues, yvalues, 1, color);
 

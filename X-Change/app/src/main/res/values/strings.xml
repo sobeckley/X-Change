@@ -19,23 +19,21 @@
     <string name="refresh">Refresh</string>
 
     <string name="EUR">Euro</string>
-    <string name="EURRATE">0.88</string>
+    <string name="EURRATE">0.8388</string>
 
     <string name="JPY">Yen</string>
-    <string name="JPYRATE">119.13</string>
+    <string name="JPYRATE">119.63</string>
 
     <string name="GBP">Pound</string>
-    <string name="GBPRATE">0.66</string>
+    <string name="GBPRATE">0.6557</string>
 
     <string name="CHF">Swiss Frank</string>
-    <string name="CHFRATE">0.93</string>
+    <string name="CHFRATE">0.9931</string>
 
     <string name="CAD">Canadian Dollar</string>
-    <string name="CADRATE">1.25</string>
+    <string name="CADRATE">1.1763</string>
 
     <string name="INR">Indian Rupee</string>
-    <string name="INRRATE">62.05</string>
-
-
+    <string name="INRRATE">63.42</string>
 
 </resources>

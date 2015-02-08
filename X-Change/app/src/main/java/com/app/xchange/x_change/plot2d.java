@@ -34,7 +34,7 @@ public class plot2d extends View {
 	protected void onDraw(Canvas canvas) {
 		
 		float canvasHeight = getHeight();
-		float canvasWidth = 1500;//getWidth();
+		float canvasWidth = 1100;//getWidth();
 		int[] xvaluesInPixels = toPixel(canvasWidth, minx, maxx, xvalues); 
 		int[] yvaluesInPixels = toPixel(canvasHeight, miny, maxy, yvalues);
 		int locxAxisInPixels = toPixelInt(canvasHeight, miny, maxy, locxAxis);
@@ -68,7 +68,8 @@ public class plot2d extends View {
                 temp = Math.round(10*(miny+(i-1)*(maxy-miny)/n))/10;
                 canvas.drawText(""+temp, locyAxisInPixels-50,canvasHeight-(float)toPixelInt(canvasHeight, miny, maxy, temp), paint);
             }
-            //canvas.drawText(""+maxx, (float)toPixelInt(canvasWidth, minx, maxx, maxx),canvasHeight-locxAxisInPixels+20, paint);
+            //canvas.drawText(""+maxx, (float)toPixelInt(canvasWidth, minx, maxx, maxx),canvasHeight-locxAxisInPixels+50, paint);
+            canvas.drawText(""+miny, locyAxisInPixels-50,canvasHeight-(float)toPixelInt(canvasHeight, miny, maxy, miny)-10, paint);
             canvas.drawText(""+maxy, locyAxisInPixels-50,canvasHeight-(float)toPixelInt(canvasHeight, miny, maxy, maxy), paint);
             //canvas.drawText(xAxis, canvasWidth/2,canvasHeight-locxAxisInPixels+45, paint);
             //canvas.drawText(yAxis, locyAxisInPixels-40,canvasHeight/2, paint);
@@ -112,7 +113,7 @@ public class plot2d extends View {
 	private void getAxes(float[] xvalues, float[] yvalues) {
 		
 		minx=getMin(xvalues);
-		miny=getMin(yvalues);
+        miny=getMin(yvalues);
 		maxx=getMax(xvalues);
 		maxy=getMax(yvalues);
 		
