@@ -1,5 +1,11 @@
 package com.app.xchange.x_change;
 
+import android.content.res.AssetManager;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,13 +14,6 @@ import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
-
-import android.content.res.AssetManager;
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 public class DataViewer extends ActionBarActivity {
 	
@@ -38,7 +37,8 @@ public class DataViewer extends ActionBarActivity {
     		System.out.println("WE GOTS NO DATA CAP'N");
     		throw new NullPointerException();
     	} else {
-    		newDataDouble = PredictionMath.predict(prevData);
+    		//newDataDouble = PredictionMath.predict(prevData);
+            newDataDouble = new double[10];
     		newData = new float[newDataDouble.length];
     		for(int j = 0; j < newDataDouble.length;j++) {
     			newData[j] = (float) newDataDouble[j];

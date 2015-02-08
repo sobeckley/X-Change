@@ -28,12 +28,9 @@ public class PredictionView extends ActionBarActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        double[] prevData = null;
-        try{
-            prevData = readAndInsert("2013r.csv");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-            System.out.println("FLIP A SHIT AND RUN OUT OF THE ROOM");
+        double[] prevData = new double[10];
+        for (int i = 0; i < prevData.length; i++) {
+            prevData[i] = i;
         }
 
         double[] newDataDouble = null;
@@ -44,7 +41,8 @@ public class PredictionView extends ActionBarActivity {
             throw new NullPointerException();
         } else {
             //newDataDouble = PredictionMath.predict(prevData);
-            newDataDouble = []
+            newDataDouble = new double[10];
+
             newData = new float[newDataDouble.length];
             for(int j = 0; j < newDataDouble.length;j++) {
                 newData[j] = (float) newDataDouble[j];
