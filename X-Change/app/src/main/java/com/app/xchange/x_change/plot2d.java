@@ -43,18 +43,16 @@ public class plot2d extends View {
 		String yAxis = "y-axis";
 		int color = 0;
 
-		paint.setStrokeWidth(2);
+		paint.setStrokeWidth(20);
 		canvas.drawARGB(255, 255, 255, 255);
 		for (int i = 0; i < vectorLength-1; i++, color++) {
-			if(color < colorSwitch)
-				paint.setColor(Color.RED);
-			else
-				paint.setColor(Color.BLUE);
+			paint.setColor(Color.BLUE);
 			canvas.drawLine(xvaluesInPixels[i],canvasHeight-yvaluesInPixels[i],xvaluesInPixels[i+1],canvasHeight-yvaluesInPixels[i+1],paint);
 		}
 		
 		
 		paint.setColor(Color.BLACK);
+        paint.setStrokeWidth(10);
 		canvas.drawLine(0,canvasHeight-locxAxisInPixels,canvasWidth,canvasHeight-locxAxisInPixels,paint);
 		canvas.drawLine(locyAxisInPixels,0,locyAxisInPixels,canvasHeight,paint);
 
@@ -63,15 +61,15 @@ public class plot2d extends View {
             float temp = 0.0f;
             int n=3;
             paint.setTextAlign(Paint.Align.CENTER);
-            paint.setTextSize(20.0f);
+            paint.setTextSize(50.0f);
             for (int i=1;i<=n;i++){
                 temp = Math.round(10*(minx+(i)*14/n))/10;
-                canvas.drawText(""+temp, (float)toPixelInt(canvasWidth, minx, maxx, temp),canvasHeight-locxAxisInPixels+20, paint);
+                canvas.drawText(""+temp, (float)toPixelInt(canvasWidth, minx, maxx, temp),canvasHeight-locxAxisInPixels+50, paint);
                 temp = Math.round(10*(miny+(i-1)*(maxy-miny)/n))/10;
-                canvas.drawText(""+temp, locyAxisInPixels+20,canvasHeight-(float)toPixelInt(canvasHeight, miny, maxy, temp), paint);
+                canvas.drawText(""+temp, locyAxisInPixels-50,canvasHeight-(float)toPixelInt(canvasHeight, miny, maxy, temp), paint);
             }
             //canvas.drawText(""+maxx, (float)toPixelInt(canvasWidth, minx, maxx, maxx),canvasHeight-locxAxisInPixels+20, paint);
-            canvas.drawText(""+maxy, locyAxisInPixels+20,canvasHeight-(float)toPixelInt(canvasHeight, miny, maxy, maxy), paint);
+            canvas.drawText(""+maxy, locyAxisInPixels-50,canvasHeight-(float)toPixelInt(canvasHeight, miny, maxy, maxy), paint);
             //canvas.drawText(xAxis, canvasWidth/2,canvasHeight-locxAxisInPixels+45, paint);
             //canvas.drawText(yAxis, locyAxisInPixels-40,canvasHeight/2, paint);
         }
